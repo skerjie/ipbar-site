@@ -51,6 +51,8 @@ To stop the latency connections, hide the row: … → Show → Latency.
   macOS and never sent anywhere.
 - **Settings** — which rows are shown, the latency host, and whether the
   welcome window has been shown — are kept in the app's own preferences.
+- **Networks you require a VPN on** are remembered by their router's hardware
+  address, in the app's preferences, and never sent anywhere.
 - **Launch at Login** is registered with macOS only when you turn it on.
 - **The clipboard** receives an address when you click to copy one. IPBar never
   reads the clipboard.
