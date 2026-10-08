@@ -26,6 +26,7 @@ measure latency. With it off, nothing runs while the menu is closed.
 | [ipapi.co](https://ipapi.co) | Only when ipwho.is does not answer | The same. |
 | [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | Only when your Mac has a public IPv6 address | Your public IPv4 address and your public IPv6 address, one each, so both can be shown. |
 | A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all three above | Your public IP address. With one set, ipwho.is, ipapi.co and ipify are not asked at all. |
+| [bash.ws](https://bash.ws) | Only when you run Check DNS Leaks | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
 | The latency host: apple.com unless you choose Cloudflare (1.1.1.1), Google (8.8.8.8) or a host you type | While the latency row is shown | Up to three connections that are opened and closed without sending any data, to time the round trip. |
 
 Every service you connect to sees your public IP address — that is how the
@@ -40,7 +41,7 @@ These services have their own privacy policies:
 [ipwhois.io](https://ipwhois.io/privacy),
 [ipapi.co](https://ipapi.co/privacy/),
 [ipify](https://www.ipify.org) (which states that it logs no visitor
-information), [Apple](https://www.apple.com/legal/privacy/),
+information), [bash.ws](https://bash.ws), [Apple](https://www.apple.com/legal/privacy/),
 [Cloudflare](https://www.cloudflare.com/privacypolicy/) and
 [Google](https://policies.google.com/privacy).
 

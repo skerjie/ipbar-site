@@ -28,6 +28,7 @@
 | [ipapi.co](https://ipapi.co) | Только если ipwho.is не ответил | То же самое. |
 | [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | Только если у вашего Mac есть публичный IPv6-адрес | Ваш публичный IPv4-адрес и публичный IPv6-адрес, по одному на каждый хост, чтобы показать оба. |
 | Сервис запроса, который вы указали сами (… → «Сервис запроса») | При каждом запросе, вместо всех трёх выше | Ваш публичный IP-адрес. Когда он указан, к ipwho.is, ipapi.co и ipify не обращаются вовсе. |
+| [bash.ws](https://bash.ws) | Только когда вы запускаете «Проверить утечку DNS» | Ваш публичный IP-адрес и адреса DNS-серверов вашего Mac: они разрешают десять одноразовых имён в домене bash.ws, по этому тест их и видит. |
 | Хост задержки: apple.com, если вы не выбрали Cloudflare (1.1.1.1), Google (8.8.8.8) или свой хост | Пока строка задержки видна | До трёх соединений, которые открываются и закрываются без передачи данных, чтобы замерить время ответа. |
 
 Любой сервис, к которому вы подключаетесь, видит ваш публичный IP-адрес — так
@@ -41,7 +42,7 @@ HTTPS. Кроме стандартных сведений, которые нес
 [ipwhois.io](https://ipwhois.io/privacy),
 [ipapi.co](https://ipapi.co/privacy/),
 [ipify](https://www.ipify.org) (заявляет, что не записывает сведения о
-посетителях), [Apple](https://www.apple.com/legal/privacy/),
+посетителях), [bash.ws](https://bash.ws), [Apple](https://www.apple.com/legal/privacy/),
 [Cloudflare](https://www.cloudflare.com/privacypolicy/) и
 [Google](https://policies.google.com/privacy).
 
