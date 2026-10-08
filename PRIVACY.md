@@ -25,6 +25,7 @@ measure latency. With it off, nothing runs while the menu is closed.
 | [ipwho.is](https://ipwho.is), run by [ipwhois.io](https://ipwhois.io) | Every lookup | Your public IP address. It answers with the location and internet provider of that address. |
 | [ipapi.co](https://ipapi.co) | Only when ipwho.is does not answer | The same. |
 | [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | Only when your Mac has a public IPv6 address | Your public IPv4 address and your public IPv6 address, one each, so both can be shown. |
+| A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all three above | Your public IP address. With one set, ipwho.is, ipapi.co and ipify are not asked at all. |
 | The latency host: apple.com unless you choose Cloudflare (1.1.1.1), Google (8.8.8.8) or a host you type | While the latency row is shown | Up to three connections that are opened and closed without sending any data, to time the round trip. |
 
 Every service you connect to sees your public IP address — that is how the
