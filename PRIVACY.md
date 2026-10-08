@@ -1,6 +1,6 @@
 # IPBar Privacy Policy
 
-Effective September 19, 2026 · [Русская версия](PRIVACY.ru.md)
+Effective October 8, 2026 · [Русская версия](PRIVACY.ru.md)
 
 **IPBar collects nothing.** It has no account, no analytics, no crash
 reporting, no ads and no tracking, and its developer never receives any data
@@ -9,9 +9,14 @@ internet; this page says which services, when, and what they receive.
 
 ## When IPBar goes online
 
-Only when you open its menu, press Refresh or Try Again, click the latency card,
-pick another latency host or show the latency row again. Nothing runs in the
-background while the menu is closed.
+When you open its menu, press Refresh or Try Again, click the latency card,
+pick another latency host or show the latency row again.
+
+**Watch in Background** is off unless you turn it on in the … menu. While it
+is on, IPBar also looks up your address when your network changes — a new
+Wi-Fi network, a VPN connecting or disconnecting — and when your Mac wakes
+from sleep. These lookups go to the same services as below, and do not
+measure latency. With it off, nothing runs while the menu is closed.
 
 ## Who receives what
 
@@ -49,8 +54,9 @@ To stop the latency connections, hide the row: … → Show → Latency.
 - **Launch at Login** is registered with macOS only when you turn it on.
 - **The clipboard** receives an address when you click to copy one. IPBar never
   reads the clipboard.
-- **No history.** Each lookup replaces the last one, and neither the answers
-  nor anything else from the network is saved to disk.
+- **Addresses seen this session** are kept in memory to show the Earlier
+  list, and are gone when IPBar quits. Nothing from the network is saved to
+  disk.
 
 To remove everything IPBar keeps, quit it and move it to the Trash, then
 delete `~/Library/Containers/com.andreipalonski.ipbar`.
