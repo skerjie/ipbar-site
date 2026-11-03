@@ -16,7 +16,10 @@ pick another latency host or show the latency row again.
 is on, IPBar also looks up your address when your network changes — a new
 Wi-Fi network, a VPN connecting or disconnecting — and when your Mac wakes
 from sleep. These lookups go to the same services as below, and do not
-measure latency. With it off, nothing runs while the menu is closed.
+measure latency. It also asks ipify for your address once a minute, or your own
+lookup service if you set one, to notice a change that raises no network event;
+only when the address has changed does a full lookup follow. With it off,
+nothing runs while the menu is closed.
 
 ## Who receives what
 
@@ -24,7 +27,7 @@ measure latency. With it off, nothing runs while the menu is closed.
 | --- | --- | --- |
 | [ipwho.is](https://ipwho.is), run by [ipwhois.io](https://ipwhois.io) | Every lookup | Your public IP address. It answers with the location and internet provider of that address. |
 | [ipapi.co](https://ipapi.co) | Only when ipwho.is does not answer | The same. |
-| [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | Only when your Mac has a public IPv6 address | Your public IPv4 address and your public IPv6 address, one each, so both can be shown. |
+| [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | When your Mac has a public IPv6 address, and once a minute while Watch in Background is on | Your public IPv4 address, and your public IPv6 address when there is one. |
 | A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all three above | Your public IP address. With one set, ipwho.is, ipapi.co and ipify are not asked at all. |
 | [bash.ws](https://bash.ws) | Only when you run Check DNS Leaks | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
 | STUN servers: stun.cloudflare.com, and stun.l.google.com if it does not answer | Only when you run Check WebRTC Leaks | A few UDP packets carrying no data about you; like every connection, they show your public IP address. |
