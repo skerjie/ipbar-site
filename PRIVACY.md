@@ -12,7 +12,7 @@ internet; this page says which services, when, and what they receive.
 When you open its menu, press Refresh or Try Again, click the latency card,
 pick another latency host or show the latency row again.
 
-**Watch in Background** is off unless you turn it on in the … menu. While it
+**Watch in Background** is off unless you turn it on in Settings. While it
 is on, IPBar also looks up your address when your network changes — a new
 Wi-Fi network, a VPN connecting or disconnecting — and when your Mac wakes
 from sleep. These lookups go to the same services as below, and do not
@@ -20,6 +20,12 @@ measure latency. It also asks ipify for your address once a minute, or your own
 lookup service if you set one, to notice a change that raises no network event;
 only when the address has changed does a full lookup follow. With it off,
 nothing runs while the menu is closed.
+
+**Leaks Are Found** (Settings → Alerts) is off unless you turn it on. With it on,
+Watch in Background on and a VPN up, IPBar runs Check for Leaks by itself after
+the network changes (at most every five minutes) and every six hours, so the
+services it asks, below, receive those requests then too. It never runs with
+your own lookup service set.
 
 ## Who receives what
 
@@ -33,8 +39,9 @@ nothing runs while the menu is closed.
 | Akamai (`whoami.akamai.net`), and ipwho.is or ipapi.co | Only with a VPN up, Watch in Background on and the DNS alert switched on, when the network changes; never with your own lookup service set | One DNS lookup, which Akamai answers with your DNS server's address. That address goes to ipwho.is, or ipapi.co if it does not answer, once, to learn its country. |
 | Your Mac's DNS resolver, and the name servers of whoever runs your public address | After a lookup finds an address that is new this session | One reverse DNS query, which carries your public IP address, to learn the address's name (shown under the provider). No third-party lookup service is involved. |
 | [GitHub](https://github.com) (`api.github.com`) | When you open the menu, at most once a day; never while it stays closed | A request for the latest IPBar release, which carries nothing about you or your Mac. Like every connection, it shows your public IP address. |
-| [bash.ws](https://bash.ws) | Only when you run Check for Leaks | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
-| STUN servers: stun.cloudflare.com, and stun.l.google.com if it does not answer | Only when you run Check for Leaks | A few UDP packets carrying no data about you; like every connection, they show your public IP address. |
+| [bash.ws](https://bash.ws) | When Check for Leaks runs: when you run it, or when Leaks Are Found does | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
+| STUN servers: stun.cloudflare.com, and stun.l.google.com if it does not answer | When Check for Leaks runs | A few UDP packets carrying no data about you; like every connection, they show your public IP address. |
+| Sites you list yourself (Settings → Networks → Sites to Check); none unless you add them | When Check for Leaks runs | One request to the site's `/cdn-cgi/trace` page, which tells it nothing about you; like every connection, it shows your public IP address. |
 | The latency host: apple.com unless you choose Cloudflare (1.1.1.1), Google (8.8.8.8) or a host you type | While the latency row is shown | Up to three connections that are opened and closed without sending any data, to time the round trip. |
 
 Every service you connect to sees your public IP address — that is how the
@@ -62,8 +69,8 @@ To stop the latency connections, hide the row: … → Show → Latency.
   macOS and never sent anywhere.
 - **Settings** — which rows are shown, the latency host, and whether the
   welcome window has been shown — are kept in the app's own preferences.
-- **Countries and addresses you allow** (… → Allowed Connections), and the
-  time a pause of alerts ends, are kept in the app's preferences and never sent
+- **Countries, addresses and networks you allow**, the sites you list (both in
+  Settings → Networks), and the time a pause of alerts ends, are kept in the app's preferences and never sent
   anywhere.
 - **Networks you require a VPN on, or want no alerts on,** are remembered by their router's hardware
   address, in the app's preferences, and never sent anywhere.
@@ -71,8 +78,14 @@ To stop the latency connections, hide the row: … → Show → Latency.
 - **The clipboard** receives an address when you click to copy one. IPBar never
   reads the clipboard.
 - **Addresses seen this session** are kept in memory to show the Earlier
-  list, and are gone when IPBar quits. Nothing from the network is saved to
-  disk.
+  list, and are gone when IPBar quits.
+- **History**, only if you turn on Keep History on This Mac (Settings →
+  General; off by default): every new public address with its time, country,
+  place and provider, and the start and end of every VPN drop while Watch in
+  Background is on. It is a file in the app's container, entries older than 90
+  days are deleted, and it is never sent anywhere. Clear History deletes it;
+  Export as CSV writes a copy only where you choose. With it off, nothing from
+  the network is saved to disk.
 
 To remove everything IPBar keeps, quit it and move it to the Trash, then
 delete `~/Library/Containers/com.andreipalonski.ipbar`.
