@@ -31,6 +31,8 @@ nothing runs while the menu is closed.
 | [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | When your Mac has a public IPv6 address, when you run Check for Leaks, and once a minute while Watch in Background is on | Your public IPv4 address, and your public IPv6 address when there is one. |
 | A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all four above | Your public IP address. With one set, ipwho.is, ipapi.co, Cloudflare and ipify are not asked at all. |
 | Akamai (`whoami.akamai.net`), and ipwho.is or ipapi.co | Only with a VPN up, Watch in Background on and the DNS alert switched on, when the network changes; never with your own lookup service set | One DNS lookup, which Akamai answers with your DNS server's address. That address goes to ipwho.is, or ipapi.co if it does not answer, once, to learn its country. |
+| Your Mac's DNS resolver, and the name servers of whoever runs your public address | After a lookup finds an address that is new this session | One reverse DNS query, which carries your public IP address, to learn the address's name (shown under the provider). No third-party lookup service is involved. |
+| [GitHub](https://github.com) (`api.github.com`) | When you open the menu, at most once a day; never while it stays closed | A request for the latest IPBar release, which carries nothing about you or your Mac. Like every connection, it shows your public IP address. |
 | [bash.ws](https://bash.ws) | Only when you run Check for Leaks | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
 | STUN servers: stun.cloudflare.com, and stun.l.google.com if it does not answer | Only when you run Check for Leaks | A few UDP packets carrying no data about you; like every connection, they show your public IP address. |
 | The latency host: apple.com unless you choose Cloudflare (1.1.1.1), Google (8.8.8.8) or a host you type | While the latency row is shown | Up to three connections that are opened and closed without sending any data, to time the round trip. |
@@ -47,7 +49,8 @@ These services have their own privacy policies:
 [ipwhois.io](https://ipwhois.io/privacy),
 [ipapi.co](https://ipapi.co/privacy/),
 [ipify](https://www.ipify.org) (which states that it logs no visitor
-information), [bash.ws](https://bash.ws), [Apple](https://www.apple.com/legal/privacy/),
+information), [bash.ws](https://bash.ws),
+[GitHub](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement), [Apple](https://www.apple.com/legal/privacy/),
 [Cloudflare](https://www.cloudflare.com/privacypolicy/) and
 [Google](https://policies.google.com/privacy).
 
