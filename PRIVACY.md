@@ -65,7 +65,7 @@ To stop the latency connections, hide the row: … → Show → Latency.
 - **Countries and addresses you allow** (… → Allowed Connections), and the
   time a pause of alerts ends, are kept in the app's preferences and never sent
   anywhere.
-- **Networks you require a VPN on** are remembered by their router's hardware
+- **Networks you require a VPN on, or want no alerts on,** are remembered by their router's hardware
   address, in the app's preferences, and never sent anywhere.
 - **Launch at Login** is registered with macOS only when you turn it on.
 - **The clipboard** receives an address when you click to copy one. IPBar never
