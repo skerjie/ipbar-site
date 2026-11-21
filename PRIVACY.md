@@ -1,6 +1,6 @@
 # IPBar Privacy Policy
 
-Effective October 8, 2026 · [Русская версия](PRIVACY.ru.md)
+Effective November 21, 2026 · [Русская версия](PRIVACY.ru.md)
 
 **IPBar collects nothing.** It has no account, no analytics, no crash
 reporting, no ads and no tracking, and its developer never receives any data
@@ -27,8 +27,9 @@ nothing runs while the menu is closed.
 | --- | --- | --- |
 | [ipwho.is](https://ipwho.is), run by [ipwhois.io](https://ipwhois.io) | Every lookup | Your public IP address. It answers with the location and internet provider of that address. |
 | [ipapi.co](https://ipapi.co) | When ipwho.is does not answer, and when you run Check for Leaks | The same. |
+| [Cloudflare](https://www.cloudflare.com) (`www.cloudflare.com/cdn-cgi/trace`) | When neither ipwho.is nor ipapi.co answers, and when you run Check for Leaks | Your public IP address. It answers with that address and its country only. |
 | [ipify](https://www.ipify.org) (`api4.ipify.org`, `api6.ipify.org`) | When your Mac has a public IPv6 address, when you run Check for Leaks, and once a minute while Watch in Background is on | Your public IPv4 address, and your public IPv6 address when there is one. |
-| A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all three above | Your public IP address. With one set, ipwho.is, ipapi.co and ipify are not asked at all. |
+| A lookup service you set yourself (… → Lookup Service) | Every lookup, instead of all four above | Your public IP address. With one set, ipwho.is, ipapi.co, Cloudflare and ipify are not asked at all. |
 | Akamai (`whoami.akamai.net`), and ipwho.is or ipapi.co | Only with a VPN up, Watch in Background on and the DNS alert switched on, when the network changes; never with your own lookup service set | One DNS lookup, which Akamai answers with your DNS server's address. That address goes to ipwho.is, or ipapi.co if it does not answer, once, to learn its country. |
 | [bash.ws](https://bash.ws) | Only when you run Check for Leaks | Your public IP address, and the addresses of the DNS servers your Mac uses: they look up ten one-off names under bash.ws, which is how the test sees them. |
 | STUN servers: stun.cloudflare.com, and stun.l.google.com if it does not answer | Only when you run Check for Leaks | A few UDP packets carrying no data about you; like every connection, they show your public IP address. |
@@ -58,6 +59,9 @@ To stop the latency connections, hide the row: … → Show → Latency.
   macOS and never sent anywhere.
 - **Settings** — which rows are shown, the latency host, and whether the
   welcome window has been shown — are kept in the app's own preferences.
+- **Countries and addresses you allow** (… → Allowed Connections), and the
+  time a pause of alerts ends, are kept in the app's preferences and never sent
+  anywhere.
 - **Networks you require a VPN on** are remembered by their router's hardware
   address, in the app's preferences, and never sent anywhere.
 - **Launch at Login** is registered with macOS only when you turn it on.
@@ -69,6 +73,14 @@ To stop the latency connections, hide the row: … → Show → Latency.
 
 To remove everything IPBar keeps, quit it and move it to the Trash, then
 delete `~/Library/Containers/com.andreipalonski.ipbar`.
+
+## Report a Problem
+
+… → Report a Problem opens a new issue on GitHub in your browser, filled in with
+IPBar's version, the macOS version, the interface language, a few settings and
+the last error, with IP and hardware addresses hidden. IPBar sends nothing
+itself: you read the issue and decide whether to submit it, and GitHub's
+privacy statement then applies.
 
 ## Downloads
 
